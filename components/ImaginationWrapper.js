@@ -58,9 +58,6 @@ export default class ImaginationWrapper extends Component {
     var backgroundColor = this.rgbFromAccelerometer(x, y, z)
     return (
       <View style={{backgroundColor}}>
-        <Text>x: {x}</Text>
-        <Text>y: {y}</Text>
-        <Text>z: {z}</Text>
         {this.props.children}
       </View>
     );
