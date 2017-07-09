@@ -1,0 +1,32 @@
+{
+  "name": "Imagination",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "flow": "node_modules/.bin/flow"
+  },
+  "dependencies": {
+    "lottie-react-native": "^1.1.1",
+    "react": "~15.4.1",
+    "react-native": "0.42.2",
+    "react-native-sensor-manager": "^0.1.10",
+    "react-native-swiper": "1.5.4",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "0.38.0",
+    "jest": "19.0.2",
+    "react-test-renderer": "~15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
