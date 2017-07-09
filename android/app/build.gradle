@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-sensors')
     compile project(':react-native-sensor-manager')
     compile project(':lottie-react-native')
     compile fileTree(dir: "libs", include: ["*.jar"])

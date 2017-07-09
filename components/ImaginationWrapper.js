@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { View, DeviceEventEmitter } from 'react-native'
-import { SensorManager } from 'NativeModules'
+import { View, Text, Platform } from 'react-native'
+import { Accelerometer } from 'react-native-sensors';
+const accelerationObservable = new Accelerometer({
+  updateInterval: 100, // defaults to 100ms
+});
 
 // Values for scale
-let ACCELEROMETER_MIN = -10
-let ACCELEROMETER_MAX = 10
+let ACCELEROMETER_MIN = Platform.OS === 'ios' ? -1 : -10
+let ACCELEROMETER_MAX = Platform.OS === 'ios' ? 1 : 10
 
 export default class ImaginationWrapper extends Component {
 
@@ -18,12 +21,11 @@ export default class ImaginationWrapper extends Component {
   }
 
   componentDidMount () {
-    SensorManager.startAccelerometer(100)
-    DeviceEventEmitter.addListener('Accelerometer', (data) => this.accelerometerChanged(data))
+    accelerationObservable.subscribe((data) => this.accelerometerChanged(data))
   }
 
   componentWillUnmount () {
-    SensorManager.stopAccelerometer()
+    accelerationObservable.stop()
   }
 
   accelerometerChanged (data: *) {
@@ -56,6 +58,9 @@ export default class ImaginationWrapper extends Component {
     var backgroundColor = this.rgbFromAccelerometer(x, y, z)
     return (
       <View style={{backgroundColor}}>
+        <Text>x: {x}</Text>
+        <Text>y: {y}</Text>
+        <Text>z: {z}</Text>
         {this.props.children}
       </View>
     );
