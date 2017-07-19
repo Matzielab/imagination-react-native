@@ -15,7 +15,7 @@ export default class Start extends Component {
     return (
       <ImaginationWrapper style={styles.wrapper}>
         <StatusBar barStyle='light-content' />
-          <Swiper style={styles.swiper}>
+          <Swiper style={styles.swiper} paginationStyle={styles.swiperPagination}>
             <Welcome />
             <AboutView />
             <BasicArt artwork={Artworks[0]} />
@@ -37,5 +37,8 @@ let styles = StyleSheet.create({
   },
   swiper: {
     marginTop: (Platform.OS === 'ios') ? 10 : 0
+  },
+  swiperPagination: {
+    bottom: (Platform.OS === 'ios') ? '5%' : '10%'
   }
 })

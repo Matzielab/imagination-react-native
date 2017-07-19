@@ -1,7 +1,7 @@
 // @flow
 import React, {PureComponent} from 'react'
 import {View, Image, Text, StyleSheet, TouchableOpacity, Linking} from 'react-native'
-import {logo} from '../libs/Images'
+import {logo, matzielabLogo} from '../libs/Images'
 
 export default class Welcome extends PureComponent {
 
@@ -9,7 +9,8 @@ export default class Welcome extends PureComponent {
     return <View style={styles.wrapper}>
       <Image source={logo} style={styles.logo} />
       <TouchableOpacity style={styles.button} onPress={() => this.goToMatzielab()}>
-        <Text style={styles.credit}>by Matzielab</Text>
+        <Image source={matzielabLogo} style={styles.matzielabLogo} />
+        <Text style={styles.credit}>By Matzielab</Text>
       </TouchableOpacity>
     </View>
   }
@@ -31,8 +32,21 @@ let styles = StyleSheet.create({
     height: 80,
     resizeMode: 'contain'
   },
+  button: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 50
+  },
   credit: {
     fontSize: 12,
     color: '#ffffff'
+  },
+  matzielabLogo: {
+    width: 20,
+    height: 20,
+    marginLeft: 5,
+    marginRight: 5
   }
 })
