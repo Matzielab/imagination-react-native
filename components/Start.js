@@ -1,36 +1,29 @@
 // @flow
 import React, {Component} from 'react'
-import {StatusBar, StyleSheet} from 'react-native'
+import {StatusBar, StyleSheet, Platform} from 'react-native'
 import Swiper from 'react-native-swiper'
 import Welcome from './Welcome'
+import AboutView from './AboutView'
 import BasicArt from './BasicArt'
+import InfoView from './InfoView'
 import ImaginationWrapper from './ImaginationWrapper'
-import {circut, abbeyRoad, smalltalk, opacityDots, sky} from '../libs/Images'
+import Artworks from '../libs/Artworks'
 
 export default class Start extends Component {
 
-  getArtworks(): * {
-    return [
-      {image: circut, title: 'Circutry', artist: 'Matzie', description: 'Lorem ipsum up in here'},
-      {image: smalltalk, title: 'Smalltalk', artist: 'Matzie', description: 'Lorem ipsum up in here'},
-      {image: opacityDots, title: 'Opacity dots', artist: 'Matzie', description: 'Lorem ipsum up in here'},
-      {image: sky, title: 'Tasty sky', artist: 'Matzie', description: 'Lorem ipsum up in here'},
-      {image: abbeyRoad, title: 'Abbey Flow', artist: 'Matzie', description: 'Lorem ipsum up in here'},
-    ]
-  }
-
   render(): * {
-    var artworks = this.getArtworks()
     return (
       <ImaginationWrapper style={styles.wrapper}>
         <StatusBar barStyle='light-content' />
-          <Swiper>
+          <Swiper style={styles.swiper}>
             <Welcome />
-            <BasicArt artwork={artworks[0]} />
-            <BasicArt artwork={artworks[1]} />
-            <BasicArt artwork={artworks[2]} />
-            <BasicArt artwork={artworks[3]} />
-            <BasicArt artwork={artworks[4]} />
+            <AboutView />
+            <BasicArt artwork={Artworks[0]} />
+            <BasicArt artwork={Artworks[1]} />
+            <BasicArt artwork={Artworks[2]} />
+            <BasicArt artwork={Artworks[3]} />
+            <BasicArt artwork={Artworks[4]} />
+            <InfoView />
           </Swiper>
       </ImaginationWrapper>
     )
@@ -41,5 +34,8 @@ export default class Start extends Component {
 let styles = StyleSheet.create({
   wrapper: {
     flexGrow: 1
+  },
+  swiper: {
+    marginTop: (Platform.OS === 'ios') ? 10 : 0
   }
 })

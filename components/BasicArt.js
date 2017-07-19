@@ -2,22 +2,30 @@
 import React, {PureComponent} from 'react'
 import {ScrollView, Image, View, Text, StyleSheet} from 'react-native'
 import {deviceWidth} from '../libs/Common'
+import LottieAnimation from './LottieAnimation'
 
 export default class BasicArt extends PureComponent {
-  props: {artwork: *}
+  props: {artwork: Object}
 
   render(): * {
-    var {image, artTitle, artist, description} = this.props.artwork
+    var {artwork} = this.props
+    var {title, artist, description} = artwork
     return (
       <ScrollView contentContainerStyle={styles.wrapper}>
-        <Image source={image} style={styles.image} />
+        {this.renderMedia()}
         <View style={styles.infoSection}>
-          <Text style={styles.title}>{artTitle}</Text>
-          <Text style={styles.artist}>{artist}</Text>
+          <Text style={styles.title}>{title}</Text>
           <Text style={styles.description}>{description}</Text>
         </View>
       </ScrollView>
     )
+  }
+
+  renderMedia (): * {
+    var {artwork} = this.props
+    var {image, lottie} = artwork
+    return lottie ?  <LottieAnimation source={image} width={deviceWidth()} height={deviceWidth()} duration={5000} loop />
+    : <Image source={image} style={styles.image} />
   }
 }
 
@@ -42,7 +50,7 @@ let styles = StyleSheet.create({
     fontWeight: '700',
   },
   artist: {
-    fontSize: 18,
+    fontSize: 13,
     fontWeight: '200'
   },
   description: {
