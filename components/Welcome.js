@@ -1,6 +1,6 @@
 // @flow
 import React, {PureComponent} from 'react'
-import {View, Image, Text, StyleSheet, TouchableOpacity, Linking} from 'react-native'
+import {View, Image, Text, StyleSheet, TouchableOpacity, Linking, Platform} from 'react-native'
 import {logo, matzielabLogo} from '../libs/Images'
 
 export default class Welcome extends PureComponent {
@@ -37,7 +37,7 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 50
+    bottom: (Platform.OS === 'ios') ? '20%' : '15%'
   },
   credit: {
     fontSize: 12,
