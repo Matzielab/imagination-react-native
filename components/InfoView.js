@@ -19,7 +19,7 @@ export default class InfoView extends PureComponent {
   }
 
   contactMatzielab () {
-    Linking.openURL('mailto:matzielicious@gmail.com&subject=Imagination')
+    Linking.openURL('mailto:matzielicious@gmail.com')
   }
 }
 
