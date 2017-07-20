@@ -16,6 +16,8 @@ If you're a developer and like to help out, message me and we'll make a footprin
 - [ ] Load artworks via Lambda function from DB
 - [ ] Create contact form on InfoView
 - [ ] Fix perfectly looping Lottie animations
+- [ ] Deploy to Play Store
+- [ ] Deploy to AppStore
 - [ ] Baffle the art world forever
 
 ## Credits
