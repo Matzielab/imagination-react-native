@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, Platform } from 'react-native'
+import { View, Platform } from 'react-native'
 import { Accelerometer } from 'react-native-sensors';
 const accelerationObservable = new Accelerometer({
   updateInterval: 100, // defaults to 100ms
 });
 
 // Values for scale
-let ACCELEROMETER_MIN = Platform.OS === 'ios' ? -1 : -10
-let ACCELEROMETER_MAX = Platform.OS === 'ios' ? 1 : 10
+let ACCELEROMETER_MIN = Platform.OS === 'ios' ? 1 : -10
+let ACCELEROMETER_MAX = Platform.OS === 'ios' ? -1 : 10
 
 export default class ImaginationWrapper extends Component {
 
