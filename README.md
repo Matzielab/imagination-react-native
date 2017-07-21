@@ -4,6 +4,9 @@ This is a new way of programming art. This app will serve as a display of differ
 ## What is imagination?
 Imagination for devices takes your accelerometer and turns it into a color. It was created by Matzie for Matzielab as an experimental way of interaction response.
 
+![precis movement](https://user-images.githubusercontent.com/8973386/28459140-9b38d2c8-6e0c-11e7-9875-da3c4a93fadc.gif)
+![preview shake](https://user-images.githubusercontent.com/8973386/28459173-bd14d4a0-6e0c-11e7-827f-b758e50ba738.gif)
+
 ## What is it good for?
 Nothing and everything! It's basically just a visual response to movement or orientation. This app displays the usage of it in combination with visual art.
 
