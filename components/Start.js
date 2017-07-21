@@ -6,7 +6,7 @@ import Welcome from './Welcome'
 import AboutView from './AboutView'
 import BasicArt from './BasicArt'
 import InfoView from './InfoView'
-import ImaginationWrapper from './ImaginationWrapper'
+import {ImaginationWrapper} from 'imagination-react-native'
 import Artworks from '../libs/Artworks'
 
 export default class Start extends Component {
