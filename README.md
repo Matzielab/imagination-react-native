@@ -10,6 +10,38 @@ Imagination for devices takes your accelerometer and turns it into a color. It w
 ## What is it good for?
 Nothing and everything! It's basically just a visual response to movement or orientation. This app displays the usage of it in combination with visual art.
 
+## How to use the package
+Simply install the package with
+```
+npm install imagination-react-native --save
+```
+### Imagination itself
+You can retrieve the color by passing a function that'll recieve a rgb string whenever the acceleromter updates. It's also good to stop the accelerometer listener when unmounting or so.
+```javascript
+import {Imagination} from 'imagination-react-native'
+
+componentDidMount() {
+  Imagination.onColorChange( (color) => this.setState({color}) )
+}
+
+componentWillUnmount() {
+  Imagination.stop()
+}
+```
+### ImaginationWrapper component
+You can also use the ImaginationWrapper component. It automatically takes care of color changes and stopping. The background color of the component is updated to whatever color the accelerometer represents
+```javascript
+import {ImaginationWrapper} from 'imagination-react-native'
+
+render ():* {
+  return(
+    <ImaginationWrapper>
+      <Text>Such colors, amaze, wow</Text>
+    </ImaginationWrapper>
+  )
+}
+```
+
 ## How can i help out?
 Imagination is always in the need of artists. If you're into making visual art, illustrations or animations or have any other idea of how to make artworks with this, hit me up and you'll be part of this universe.
 If you're a developer and like to help out, message me and we'll make a footprint on the art world together!
